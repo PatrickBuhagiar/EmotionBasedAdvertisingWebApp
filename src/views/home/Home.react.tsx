@@ -39,7 +39,7 @@ export class Home extends React.Component<any, State> {
             if (this.state.adverts.length == 0) {
                 return (<div />)
             } else {
-                return this.state.adverts.sort(a => a.counter).reverse().map(ad => {
+                return this.state.adverts.sort((a,b) => a.counter > b.counter).reverse().map(ad => {
                     return (
                         <Advert name={ad.name} ageGroup={ad.ageGroup} gender={ad.gender} emotion={ad.emotion} imgURL={ad.imgURL} counter={ad.counter} />
                     )
